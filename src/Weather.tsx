@@ -39,10 +39,10 @@ const Weather: React.FC = () => {
               : [newWeatherData];
           return updatedWeatherList;
         }
-      
+
         return prevWeatherList;
       });
-      
+
       setWeather(response.data);
       console.log(await fetchPlace('kob'));
       setIcon(`https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`)
@@ -53,7 +53,7 @@ const Weather: React.FC = () => {
     }
   };
 
-  const handleCardClick = (name:string) =>{
+  const handleCardClick = (name: string) => {
     fetchData(name);
   }
 
@@ -81,13 +81,12 @@ const Weather: React.FC = () => {
             </CardContent>
           </Card>
         ) : (
-          <p>No data available for the specified city.</p>
-
+          ""
         )}
       </div>
       <div className='py-4'>
         <p className='text-4xl font-medium'>Recent Searches</p>
-        {weatherList?.map(list => <Card className='w-1/3 justify-center m-auto mt-5' onClick={()=>handleCardClick(list.name)}>
+        {weatherList?.map(list => <Card className='w-1/3 justify-center m-auto mt-5' onClick={() => handleCardClick(list.name)}>
           <CardHeader className='flex-row justify-between text-lg p-4'>
             <CardTitle>{list.name}</CardTitle>
             <CardTitle className='flex'>{list.main.temp} °C <img className='-mt-3' src={icon} alt={list.weather[0].description} /></CardTitle>

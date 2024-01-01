@@ -32,28 +32,28 @@ const SearchCity: React.FC<SearchCityProps> = ({ fetch }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex items-center space-x-2 justify-center">
-                    <Autocomplete
-                        disablePortal
-                        id="combo-box-demo"
-                        options={autocompleteCities}
-                        sx={{ width: 300 }}
+                <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={autocompleteCities}
+                    sx={{ width: 300 }}
+                    value={city}
+                    onChange={(event, newValue) => setCity(newValue || "")}
+                    renderInput={(params) => <TextField
+                        {...params}
+                        type="text"
+                        id="city"
+                        name="city"
+                        size="small"
+                        onChange={handleCityChange}
                         value={city}
-                        onChange={(event, newValue) => setCity(newValue||"")}
-                        renderInput={(params) => <TextField
-                            {...params}
-                            type="text"
-                            id="city"
-                            name="city"
-                            size="small"
-                            onChange={handleCityChange}
-                            value={city}
-                            autoComplete="on"
-                        />}
-                        />
+                        autoComplete="on"
+                    />}
+                />
                 <Button type="submit" className='ml-3'>Submit</Button>
             </div>
 
-    
+
 
         </form>
     );
