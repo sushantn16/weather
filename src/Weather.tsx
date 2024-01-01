@@ -79,7 +79,7 @@ const Weather: React.FC = () => {
           ""
         )}
       </div>
-      <div className='py-4'>
+      {weatherList?.length && <div className='py-4'>
         <p className='text-4xl font-medium'>Recent Searches</p>
         {weatherList?.map(list => <Card className='w-1/3 justify-center m-auto mt-5' onClick={() => handleCardClick(list.name)}>
           <CardHeader className='flex-row justify-between text-lg p-4'>
@@ -87,7 +87,8 @@ const Weather: React.FC = () => {
             <CardTitle className='flex'>{list.main.temp} °C <img className='-mt-3' src={icon} alt={list.weather[0].description} /></CardTitle>
           </CardHeader>
         </Card>)}
-      </div>
+      </div> }
+      
 
     </>
   );
