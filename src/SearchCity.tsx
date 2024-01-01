@@ -12,7 +12,6 @@ interface SearchCityProps {
 const SearchCity: React.FC<SearchCityProps> = ({ fetch }) => {
     const [city, setCity] = useState<string>("");
     const [autocompleteCities, setAutocompleteCities] = useState(['']);
-    const [autocompleteErr, setAutocompleteErr] = useState("");
 
     const handleCityChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         setCity(e.target.value);
@@ -22,7 +21,6 @@ const SearchCity: React.FC<SearchCityProps> = ({ fetch }) => {
         !autocompleteCities.includes(e.target.value) &&
             res.features &&
             setAutocompleteCities(res.features.map((place: any) => place.place_name));
-        res.error ? setAutocompleteErr(res.error) : setAutocompleteErr("");
     };
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
