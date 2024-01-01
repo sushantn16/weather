@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Weather Watcher.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfde98dd-c204-40ea-a0a3-da598bbda762/deploy-status)](https://app.netlify.com/sites/weather-watcher11/deploys)
+
+This is an application created using react, ShadCN, and Material UI. Mapbox and weather API's have been used to fetch data.
+
+Features:
+- Autocomplete for city name search.
+- List of last 5 searches available in recent searches.
+- Interactive and user friendly UI
+
 
 ## Available Scripts
 
