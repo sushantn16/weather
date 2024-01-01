@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { fetchPlace } from './fetchPlace';
 import SearchCity from './SearchCity';
 import {
   Card,
@@ -26,7 +25,6 @@ const Weather: React.FC = () => {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
       );
-      console.log(response.data);
       setWeatherList((prevWeatherList) => {
         const newWeatherData = response.data;
         const isWeatherNameInList = prevWeatherList?.some(
@@ -44,11 +42,8 @@ const Weather: React.FC = () => {
       });
 
       setWeather(response.data);
-      console.log(await fetchPlace('kob'));
       setIcon(`https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`)
-      console.log(weather)
     } catch (error) {
-      console.error('Error fetching weather data:', error);
       setWeather(null);
     }
   };
