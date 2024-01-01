@@ -48,6 +48,7 @@ const SearchCity: React.FC<SearchCityProps> = ({ fetch }) => {
                         onChange={handleCityChange}
                         value={city}
                         autoComplete="on"
+                        placeholder='Enter your city name'
                     />}
                 />
                 <Button type="submit" className='ml-3'>Submit</Button>
