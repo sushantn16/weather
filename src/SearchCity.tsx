@@ -24,7 +24,6 @@ const SearchCity: React.FC<SearchCityProps> = ({ fetch }) => {
     };
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
-        // Call the fetch function passed in the props
         fetch(city);
         setCity('');
     };
